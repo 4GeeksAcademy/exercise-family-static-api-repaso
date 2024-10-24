@@ -14,6 +14,7 @@ class FamilyStructure:
 
         # example list of members
         self._members = []
+        
 
     # read-only: Use this method to generate random members ID's when adding members into the list
     def _generateId(self):
@@ -32,12 +33,20 @@ class FamilyStructure:
         return "Member with ID {id} has been deleted."
        else: return "Member with ID {id} does not exist."
 
-    def get_member(self, id):
-        # fill this method and update the return
-            if id in self._members: return self._members[id]
-            else: return None  
-          
-          
+def get_member(self, id):
+    # Buscar un miembro por id
+    for member in self._members:
+        if member["id"] == id:
+            return member
+    return None
+
+    # def get_member(self, id):
+    #     # fill this method and update the return
+    #         if id in self._members: return self._members[id]
+    #         else: return None  
+                  
+
+                  
   
  
 

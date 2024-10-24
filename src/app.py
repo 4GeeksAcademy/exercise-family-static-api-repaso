@@ -82,6 +82,8 @@ def create_member():
     return jsonify(jackson_family), 201
 
 
+
+
 @app.route('/member/<int:id>', methods=['DELETE'])
 def delete_member(id):
     deleted = jackson_family.delete_member(id)
