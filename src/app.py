@@ -73,13 +73,13 @@ def get_member(id):
 
 
 
-@app.route('/members', methods=['POST'])
+@app.route('/member', methods=['POST'])
 def create_member():
     member = request.json
     # if not "name" in member: return "Bad Request" ,404
     jackson_family.add_member(member)
     # this is how you can use the Family datastructure by calling its methods
-    return jsonify(jackson_family), 201
+    return jsonify(jackson_family._members), 200
 
 
 

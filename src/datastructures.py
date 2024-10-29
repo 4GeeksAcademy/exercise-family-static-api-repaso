@@ -22,23 +22,25 @@ class FamilyStructure:
 
     def add_member(self, member):
         # fill this method and update the return
-        member["id"]= self._generateId()
+        if not "id" in member:
+            member["id"]= self._generateId()
         self._members.append(member)
         pass
 
     def delete_member(self, id):
         # fill this method and update the return
-       if id in self._members:
-        del self._members[id]
+        member = self.get_member(id)
+        self._members.remove(member)
         return "Member with ID {id} has been deleted."
-       else: return "Member with ID {id} does not exist."
 
-def get_member(self, id):
-    # Buscar un miembro por id
-    for member in self._members:
-        if member["id"] == id:
-            return member
-    return None
+
+    def get_member(self, id):
+        # Buscar un miembro por id
+        for member in self._members:
+            if member["id"] == id:
+                return member
+        
+        return None
 
     # def get_member(self, id):
     #     # fill this method and update the return
